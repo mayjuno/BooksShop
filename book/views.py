@@ -2,7 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
-import json
+from .models import Book
+
 def info(request):
     name = 'Dr Kyaw Myo Swe'
     degree = ['B.C.Sc','ME(IT)','Ph.D(IT)']
@@ -19,23 +20,38 @@ def info(request):
     return render(request,'book/info.html',context)
     #return HttpResponse('Hello Django')
 
-bookData = open('/home/ade/Django_Project/Bitfumes/BooksShop/books.json').read()
-data = json.loads(bookData)
+
+# import json
+# bookData = open('/home/ade/Django_Project/Bitfumes/BooksShop/books.json').read()
+# data = json.loads(bookData)
+# def index(request):
+    
+#     context = {
+#         'books' : data,
+#     }
+#     return render(request,'book/index.html',context)
+
+# def show(request, id):
+#     singleBook = list()
+#     for book in data:
+#         if book['id'] == id:
+#             singleBook = book
+#     context = {
+#         'book' : singleBook,
+#     }
+#     return render(request,'book/show.html',context)
+
 
 
 def index(request):
-    
+    dbData = Book.objects.all()
     context = {
-        'books' : data,
+        'books' : dbData,
     }
     return render(request,'book/index.html',context)
 
-
 def show(request, id):
-    singleBook = list()
-    for book in data:
-        if book['id'] == id:
-            singleBook = book
+    singleBook = Book.objects.get(pk=id)
     context = {
         'book' : singleBook,
     }
