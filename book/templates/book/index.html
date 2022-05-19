@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Book Store</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <section class="py-10">
+            <h1 class="text-center text-4xl">Programming Books</h1>
+            <div class="grid grid-cols-4 gap-4 mt-10">
+             {% for book in books %}
+             <a href="{% url 'book_detail' book.id %}" class="justify-self-center text-center my-4">   
+                <div class="flex justify-center">                   
+                    <img src="{{book.thumbnailUrl}}" alt="{{book.title}}" width= 200 />                                       
+                </div>
+                <p class="text-lg text-gray-700">{{ book.title }}</p> 
+            </a>
+            {% endfor %}
+            </div>
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>

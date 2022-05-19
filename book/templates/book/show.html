@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Book Store</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <section class="px-5 py-10">
+            <h1 class="text-center text-4xl mb-10">{{book.title}}</h1>
+            <img class="float-left ... mx-12" src="{{book.thumbnailUrl}}" alt="{{book.title}}" width= 400 >
+            <h3 class="text-xl">About</h3><br>
+            <p class="text-section-justify">{{book.shortDescription}}</p><br> 
+
+            <h3 class="text-xl">ISB Number :<span class="text-sm">{{book.isbn}}</span></h3><br>
+
+            <h3 class="text-xl">Published Date :<span class="text-sm">{{book.publishedDate}}</span></h3><br>
+
+            <h3 class="text-xl">Number of Pages :<span class="text-sm">{{book.pageCount}}-Pages</span></h3><br>
+
+
+            <h3 class="text-xl">Book Status :<span class="text-sm">{{book.status}}</span></h3><br>
+
+
+            <h3 class="text-xl">Author :</h3><br>
+            <p>{{book.authors|join:', '}}</p><br> 
+
+            <h3 class="text-xl">Categories : <span class="text-sm">{{book.categories}}</span></h3><br>
+            <h3 class="text-xl">Long Description</h3><br>
+            <p class="text-section-justify">{{book.longDescription}}</p>
+
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>

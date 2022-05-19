@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>info-author</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="">
+        <style>
+            img{
+                width: 300px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="py-10">
+            <h1 class="text-center text-4xl">About US</h1>    
+            <div class="flex"">
+                <div class="flex justify-left">
+                    <img src="{{ thumbnailURL }}" alt="" width = 300/>
+                </div>
+                <div class="flex justify-center">
+                    <h1 class="text-center text-2xl">Developer Info</h1>   
+                    <p>Name : {{name}}</p>
+                    <p>Degree : {% for deg in degree%}<span>{{deg}},</span>{% endfor %}</p> 
+                    <p>Age : {{age}}</p> 
+                    <p>Jobs : {% for job in jobs%}<span>{{job}},</span>{% endfor %}</p>   
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
